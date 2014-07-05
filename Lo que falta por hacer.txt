@@ -1,0 +1,6 @@
+- Opcion para agregar amigos con auto completar.
+- Agregar marcadores en el mapa Ubicación del usuario.
+- Opción de actualizar, borrar o agregar nueva direcciones en el mapa usuario.
+- Agregar el buscar en el mapa.
+- Enviar mensajes a los usuarios.
+- Intencar Cambiar Iconos (más bonitos).

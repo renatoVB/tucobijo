@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Tu Cobijo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="jqm/jquery.mobile-1.4.2.min.css" />
+<script src="jquery-1.11.1.min.js"></script>
+<script src="jqm/jquery.mobile-1.4.2.min.js"></script>
+<script src="jqm/Sesion.js"></script>
+<script src="jqm/Registrar.js"></script>
+<script src="editar_perfil.js"></script>
+<script src="mapa.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="jqm/ui/jquery.ui.map.js"></script>
+<script src="jqm/ui/jquery.ui.map.overlays.js"></script>
+<script src="jqm/ui/jquery.ui.map.extensions.js"></script>
+<link rel="stylesheet" type="text/css" href="css/mapa.css">
+
+
+
+</head>
+<body>
+
+
+	<div data-role="page" id="page-1" class="ui-responsive-panel" data-url="page-1">
+		
+		<!-- Cabecera -->
+		<div data-role="header" data-theme="b" data-position="fixed">
+			
+			<h1>cabecera</h1>
+			<a href="#AbrirPanel" data-icon="bars" data-iconpos="notext">Abrir</a>
+			
+		</div> <!-- Fin Cabecera -->
+
+		<!-- Contenido -->
+		<div class="ui-content" >
+
+			<h2>Iniciar sesión</h2>
+			
+	
+				<input type="text" name="nombre" placeholder="Ingrese su nombre de usuario" id="nombre"> 
+				<input type="password" name="clave" placeholder="Ingrese su clave" id="clave">
+				<input type="submit" value="Iniciar sesión" id="BtnEntrar" >
+								
+			<a href="#page-3" data-transition="slide" data-ajax="false">Registrese haciendo clic acá</a>
+            
+
+             
+		</div><!-- Fin Contenido -->
+
+		<!-- Pie de pagina -->
+		<div data-role="footer" data-theme="b">
+
+			<h2>Esto es un pie de pagina</h2>
+
+		</div><!-- Fin Pie de pagina -->
+
+		<!-- Contenido Panel -->
+		<div data-role="panel" data-position-fixed="true" data-theme="b" id="AbrirPanel">
+			<ul data-role="listview" data-theme="a">
+				<li><a href="#page-3">Usuarios</a></li>
+				<li><a href="pagina2.html">Termino y Contraros</a></li>
+				<!--<li><a href="paginadelpanel">Nombre de la pagina</a></li>-->
+			</ul>
+		</div> <!-- Fin Contenido Panel -->
+
+	</div>
+
+
+	<!-- pagina pagina menu principal -->
+
+	<div data-role="page" id="page-2" class="ui-responsive-panel" data-url="page-2">
+		<!-- Cabecera -->
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1>Bienvenido <spam id="nom" name="nom"></spam></h1>
+			<a href="#AbrirPanel" data-icon="bars" data-iconpos="notext">Abrir</a>
+			
+		</div> <!-- Fin Cabecera -->
+
+		<!-- Contenido -->
+		<div class="ui-content">
+			<p>Contenido</p>
+			<div class="ui-grid-b">
+				<div class="ui-block-a"><a href="" data-role="button" data-theme="b" data-icon="home" data-iconpos="notext">home</a></div>
+				<div class="ui-block-b"><a href="#mensajes" data-role="button" data-theme="b" data-icon="mail" data-iconpos="notext">edit</a></div>
+				<div class="ui-block-c"><a href="#editar_perfil" data-role="button" data-theme="b" data-icon="gear" data-iconpos="notext">gear</a></div>
+				<div class="ui-block-a"><a href="#page-1" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext">delete</a></div>
+				<div class="ui-block-b"><a href="#page-mapa" data-role="button" data-theme="b" data-icon="location" data-iconpos="notext">gps</a></div>
+			</div>
+		            
+		</div><!-- Fin Contenido -->
+
+		<!-- Pie de pagina -->
+		<div data-role="footer" data-theme="b">
+
+			<h2>Esto es un pie de pagina</h2>
+
+		</div><!-- Fin Pie de pagina -->
+
+		<!-- Contenido Panel -->
+		<div data-role="panel" data-position-fixed="true" data-theme="b" id="AbrirPanel">
+			<ul data-role="listview" data-theme="a">
+				<!--<li><a href="paginadelpanel">Nombre de la pagina</a></li>-->
+			</ul>
+		</div> <!-- Fin Contenido Panel -->
+	</div>
+
+
+	<!-- pagina Registrar-->
+	<div data-role="page" id="page-3" class="ui-responsive" data-url="page-3">
+		<!-- Cabecera -->
+		<div data-role="header" data-theme="b">
+			<h1>Usuarios</h1>
+			<a href="#page-1" data-theme="b" data-icon="home" data-iconpos="notext" data-rel="back">Home</a>
+			
+		</div>
+
+		<!-- Contenido -->
+		<div data-role="content" class="ui-content">
+			
+				<h2>Regístrese</h2>
+				<input type="text" name="name" placeholder="Ingrese nombre de usuario" id="name" required/>
+				<input type="password" name="pass" placeholder="Ingrese su clave" id="pass">
+				<input type="password" name="pass2" placeholder="Repita su clave" id="pass2">
+				<input type="submit"  value="Regístrese" id="BtnRegistrar">
+				<div id="resultado"></div>
+			
+		</div>
+		
+	
+			
+			
+
+
+		<!-- Pie de pagina -->
+		<div data-role="footer" data-theme="b">
+			<h2>Pie de página</h2>
+		</div>
+
+		<!-- Cuadro de dialogo OEEE 
+			<div data-role="dialog" id="mostrar">
+
+			</div>-->
+	</div>
+
+
+		<!-- Pagina editar perfil -->
+		<div data-role="page" id="editar_perfil" class="ui-responsive-panel" data-url="editar_perfil">
+		
+		<!-- Cabecera -->
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<a href="#page-2" data-icon="home" data-iconpos="notext">Abrir</a>
+			<h1>cabecera</h1>
+
+
+			
+		</div> <!-- Fin Cabecera -->
+
+		<!-- Contenido -->
+		<div class="ui-content" >
+			<h1>Rellene su perfil</h1><h2><spam id="nom2" name="nom2"></spam></h2>
+			<input type="hidden" name="id_usu" id="id_usu" />
+			<input type="text" name="apellido" placeholder="Ingrese su apellido" id="apellido">
+			<input type="text" name="correo" placeholder="Ingrese correo" id="correo">
+			<input type ="radio" name="sexo" id="Hombre" value="Hombre" checked="checked"/><label for ="Hombre">Hombre</label>
+			<input type ="radio" name="sexo" id="Mujer" value="Mujer"/><label for="Mujer">Mujer</label>
+			<input type="submit"  value="Rellenar" id="BtnRellenar">
+		</div><!-- Fin Contenido -->
+
+		<!-- Pie de pagina -->
+		<div data-role="footer" data-theme="b">
+
+			<h2>Esto es un pie de pagina</h2>
+
+		</div><!-- Fin Pie de pagina -->
+
+		
+	</div>
+
+
+	<!-- pagina mapa -->
+
+	<div data-role="page" id="page-mapa" data-url="page-mapa">
+			
+		
+		<!-- Cabecera -->
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1>.:Tu Cobijo:.</h1>
+			<a href="#page-2" data-icon="home" data-iconpos="notext">Abrir</a>
+			
+		</div> <!-- Fin Cabecera -->
+
+		<!-- Contenido -->
+		<div class="ui-content">
+			<p>Mapa</p>
+
+	<div id="mapa"></div>
+		<input type="button" id="buscarme" value="buscarme...">
+		            
+		</div><!-- Fin Contenido -->
+
+		<!-- Pie de pagina -->
+		<div data-role="footer" data-theme="b">
+
+			<h2>Esto es un pie de pagina</h2>
+
+		</div><!-- Fin Pie de pagina -->
+
+		<!-- Contenido Panel -->
+		<div data-role="panel" data-position-fixed="true" data-theme="b" id="AbrirPanel">
+			<ul data-role="listview" data-theme="a">
+				<!--<li><a href="paginadelpanel">Nombre de la pagina</a></li>-->
+			</ul>
+		</div> <!-- Fin Contenido Panel -->
+
+
+
+	</div>
+
+	<div data-role="page" id="mensajes" data-url="mensajes">
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<a href="#page-2" data-icon="home" data-iconpos="notext"></a>
+			<h2>Mensajes <spam id="nom3" name="nom3"></spam></h2>			
+		</div>
+		<div class="ui-content">
+			Tus mensajes
+			<input type="hidden" id="id_mensaje" name="id_mensaje">
+			<textarea name="textarea" rows="10" cols="50" placeholder="Escribe un mensajes"></textarea>
+			<input type="submit"  value="Enviar" id="BtnEnviar">
+
+		</div>
+
+		<div data-role="footer" data-theme="b">
+			<P>pie de pagina</P>
+		</div>
+	</div>
+</body>
+</html>
